@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI || ""
 
@@ -10,7 +13,7 @@ export const connectDB = async () => {
         console.log(`MongoDB Connected: ${MONGO_URI}`);
         
     } catch (error) {
-        console.log("Error connection to MongoDB: ");
+        console.log("Error connection to MongoDB: ", MONGO_URI);
         process.exit(1);
     }
 };
