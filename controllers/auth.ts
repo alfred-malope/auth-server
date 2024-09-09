@@ -7,6 +7,8 @@ import { sendPasswordResetEmail, sendResetSuccessEmail, sendVerificationEmail, s
 export const signup = async (req: any, res: any) => {
 	const { email, password, name } = req.body;
 
+	console.log('Received payload:', { email, password, name });
+
 	try {
 		if (!email || !password || !name) {
 			throw new Error("All fields are required");
